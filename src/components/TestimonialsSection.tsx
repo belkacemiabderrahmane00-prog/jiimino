@@ -13,6 +13,8 @@ import gcc from "@/assets/clients/gcc.png";
 import bpost from "@/assets/clients/bpost.png";
 import bateauxParisiens from "@/assets/clients/bateaux_parisiens.png";
 import altareaCogedim from "@/assets/clients/altarea_cogedim.png";
+import venissieux from "@/assets/clients/venissieux.svg";
+import dumarey from "@/assets/clients/dumarey.svg";
 
 const testimonials = [
   {
@@ -47,6 +49,8 @@ const clientLogos = [
   { name: "Altarea Cogedim", logo: altareaCogedim },
   { name: "Opéra de Lille", logo: operaLille },
   { name: "Isère", logo: isere },
+  { name: "Ville de Vénissieux", logo: venissieux },
+  { name: "DUMAREY", logo: dumarey },
 ];
 
 const museums = [
