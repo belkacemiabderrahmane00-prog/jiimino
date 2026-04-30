@@ -1,19 +1,21 @@
 import {
-  Building, Store, Landmark, Warehouse, CalendarCheck, Gem, Trophy, Home, ShieldCheck, MapPin, Factory,
+  Building, Store, Landmark, Warehouse, CalendarCheck, Gem, Trophy, Home, ShieldCheck,
 } from "lucide-react";
+import logoVenissieux from "@/assets/logo-venissieux.svg";
+import logoDumarey from "@/assets/logo-dumarey.svg";
 
 const references = [
   {
+    logo: logoVenissieux,
     name: "Ville de Vénissieux",
-    type: "Institution publique",
-    location: "Vénissieux",
-    icon: MapPin,
+    type: "Institution publique · Vénissieux",
+    bg: "white",
   },
   {
+    logo: logoDumarey,
     name: "DUMAREY",
-    type: "Industrie automobile",
-    location: "Saint-Étienne",
-    icon: Factory,
+    type: "Industrie automobile · Saint-Étienne",
+    bg: "white",
   },
 ];
 
@@ -47,23 +49,26 @@ const ClientsSection = () => (
         <h2 className="section-title mb-8">
           Ils nous font <span className="gold-text">confiance</span>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+        <div className="flex flex-wrap gap-5">
           {references.map((ref) => (
             <div
               key={ref.name}
-              className="flex items-center gap-4 p-5 rounded-xl card-premium"
-              style={{ borderLeft: '3px solid hsl(42 72% 50% / 0.4)' }}
+              className="flex flex-col items-center gap-3 p-6 rounded-xl transition-all duration-300 hover:scale-[1.02]"
+              style={{
+                background: 'white',
+                border: '1px solid hsl(42 72% 50% / 0.2)',
+                boxShadow: '0 4px 24px hsl(0 0% 0% / 0.15)',
+                minWidth: '200px',
+              }}
             >
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                style={{ background: 'linear-gradient(135deg, hsl(42 72% 50% / 0.13), hsl(42 72% 50% / 0.05))', border: '1px solid hsl(42 72% 50% / 0.2)' }}
-              >
-                <ref.icon className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-[13px] font-semibold text-foreground/90">{ref.name}</p>
-                <p className="text-[11px] text-foreground/50">{ref.type} · {ref.location}</p>
-              </div>
+              <img
+                src={ref.logo}
+                alt={ref.name}
+                className="h-12 w-auto object-contain"
+              />
+              <p className="text-[10px] uppercase tracking-widest text-center" style={{ color: 'hsl(225 6% 40%)' }}>
+                {ref.type}
+              </p>
             </div>
           ))}
         </div>
