@@ -34,7 +34,7 @@ const testimonials = [
   },
 ];
 
-const clientLogos = [
+const row1 = [
   { name: "Nexity", logo: nexity },
   { name: "JLL", logo: jll },
   { name: "Vinci", logo: vinci },
@@ -43,6 +43,9 @@ const clientLogos = [
   { name: "E.Leclerc", logo: eLeclerc },
   { name: "GCC", logo: gcc },
   { name: "Gifi", logo: gifi },
+];
+
+const row2 = [
   { name: "C&A", logo: ca },
   { name: "bpost", logo: bpost },
   { name: "Bateaux Parisiens", logo: bateauxParisiens },
@@ -115,25 +118,53 @@ const TestimonialsSection = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4 max-w-5xl mx-auto mb-10">
-        {clientLogos.map((client, i) => (
-          <div
-            key={i}
-            className="group flex items-center justify-center h-20 rounded-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-lg cursor-default"
-            style={{
-              background: 'hsl(0 0% 100% / 0.9)',
-              border: '1px solid hsl(0 0% 0% / 0.06)',
-              boxShadow: '0 2px 8px hsl(0 0% 0% / 0.04)',
-            }}
-          >
-            <img
-              src={client.logo}
-              alt={client.name}
-              className="max-h-11 max-w-[80px] object-contain transition-all duration-500 group-hover:scale-110"
-              title={client.name}
-            />
-          </div>
-        ))}
+      {/* Marquee rows */}
+      <div className="overflow-hidden marquee-track mb-4" style={{ maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
+        {/* Row 1 — défile vers la gauche */}
+        <div className="flex gap-4 w-max marquee-left">
+          {[...row1, ...row1].map((client, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center h-20 w-36 rounded-xl shrink-0 cursor-default"
+              style={{
+                background: 'hsl(0 0% 100% / 0.92)',
+                border: '1px solid hsl(0 0% 0% / 0.07)',
+                boxShadow: '0 2px 10px hsl(0 0% 0% / 0.06)',
+              }}
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-h-10 max-w-[90px] object-contain"
+                title={client.name}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="overflow-hidden marquee-track mb-10" style={{ maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
+        {/* Row 2 — défile vers la droite */}
+        <div className="flex gap-4 w-max marquee-right">
+          {[...row2, ...row2].map((client, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center h-20 w-36 rounded-xl shrink-0 cursor-default"
+              style={{
+                background: 'hsl(0 0% 100% / 0.92)',
+                border: '1px solid hsl(0 0% 0% / 0.07)',
+                boxShadow: '0 2px 10px hsl(0 0% 0% / 0.06)',
+              }}
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="max-h-10 max-w-[90px] object-contain"
+                title={client.name}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Museum references */}
