@@ -1,23 +1,6 @@
 import {
   Building, Store, Landmark, Warehouse, CalendarCheck, Gem, Trophy, Home, ShieldCheck,
 } from "lucide-react";
-import logoVenissieux from "@/assets/logo-venissieux.svg";
-import logoDumarey from "@/assets/logo-dumarey.svg";
-
-const references = [
-  {
-    logo: logoVenissieux,
-    name: "Ville de Vénissieux",
-    type: "Institution publique · Vénissieux",
-    bg: "white",
-  },
-  {
-    logo: logoDumarey,
-    name: "DUMAREY",
-    type: "Industrie automobile · Saint-Étienne",
-    bg: "white",
-  },
-];
 
 const sectors = [
   { icon: Building, label: "Entreprises & bureaux" },
@@ -42,38 +25,6 @@ const ClientsSection = () => (
     <div className="absolute bottom-0 left-1/3 w-[500px] h-[400px] rounded-full blur-[140px] pointer-events-none" style={{ background: 'hsl(42 72% 50% / 0.03)' }} />
 
     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-
-      {/* Références clients */}
-      <div className="mb-16">
-        <p className="section-label">Références</p>
-        <h2 className="section-title mb-8">
-          Ils nous font <span className="gold-text">confiance</span>
-        </h2>
-        <div className="flex flex-wrap gap-5">
-          {references.map((ref) => (
-            <div
-              key={ref.name}
-              className="flex flex-col items-center gap-3 p-6 rounded-xl transition-all duration-300 hover:scale-[1.02]"
-              style={{
-                background: 'white',
-                border: '1px solid hsl(42 72% 50% / 0.2)',
-                boxShadow: '0 4px 24px hsl(0 0% 0% / 0.15)',
-                minWidth: '200px',
-              }}
-            >
-              <img
-                src={ref.logo}
-                alt={ref.name}
-                className="h-12 w-auto object-contain"
-              />
-              <p className="text-[10px] uppercase tracking-widest text-center" style={{ color: 'hsl(225 6% 40%)' }}>
-                {ref.type}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="metallic-line w-24 mt-8" />
-      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
         <div>
