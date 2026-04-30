@@ -1,6 +1,21 @@
 import {
-  Building, Store, Landmark, Warehouse, CalendarCheck, Gem, Trophy, Home, ShieldCheck,
+  Building, Store, Landmark, Warehouse, CalendarCheck, Gem, Trophy, Home, ShieldCheck, MapPin, Factory,
 } from "lucide-react";
+
+const references = [
+  {
+    name: "Ville de Vénissieux",
+    type: "Institution publique",
+    location: "Vénissieux",
+    icon: MapPin,
+  },
+  {
+    name: "DUMAREY",
+    type: "Industrie automobile",
+    location: "Saint-Étienne",
+    icon: Factory,
+  },
+];
 
 const sectors = [
   { icon: Building, label: "Entreprises & bureaux" },
@@ -25,6 +40,36 @@ const ClientsSection = () => (
     <div className="absolute bottom-0 left-1/3 w-[500px] h-[400px] rounded-full blur-[140px] pointer-events-none" style={{ background: 'hsl(42 72% 50% / 0.03)' }} />
 
     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+
+      {/* Références clients */}
+      <div className="mb-16">
+        <p className="section-label">Références</p>
+        <h2 className="section-title mb-8">
+          Ils nous font <span className="gold-text">confiance</span>
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+          {references.map((ref) => (
+            <div
+              key={ref.name}
+              className="flex items-center gap-4 p-5 rounded-xl card-premium"
+              style={{ borderLeft: '3px solid hsl(42 72% 50% / 0.4)' }}
+            >
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: 'linear-gradient(135deg, hsl(42 72% 50% / 0.13), hsl(42 72% 50% / 0.05))', border: '1px solid hsl(42 72% 50% / 0.2)' }}
+              >
+                <ref.icon className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-[13px] font-semibold text-foreground/90">{ref.name}</p>
+                <p className="text-[11px] text-foreground/50">{ref.type} · {ref.location}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="metallic-line w-24 mt-8" />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
         <div>
           <p className="section-label">Nos secteurs</p>

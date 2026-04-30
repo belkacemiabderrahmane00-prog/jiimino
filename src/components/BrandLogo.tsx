@@ -37,7 +37,7 @@ const BrandLogo = ({ className = "h-10", variant = "light" }: BrandLogoProps) =>
       
       {/* MINO — O collé à MIN */}
       <text
-        x="112"
+        x="94"
         y="44"
         fontFamily="'Cormorant Garamond', Georgia, serif"
         fontSize="42"
@@ -50,7 +50,7 @@ const BrandLogo = ({ className = "h-10", variant = "light" }: BrandLogoProps) =>
       
       {/* Golden O — collé right after MIN */}
       <text
-        x="209"
+        x="191"
         y="44"
         fontFamily="'Cormorant Garamond', Georgia, serif"
         fontSize="42"
