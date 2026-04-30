@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import FloatingCTA from "@/components/FloatingCTA";
 import HeroSection from "@/components/HeroSection";
 import VideoShowcase from "@/components/VideoShowcase";
 import KeyFiguresSection from "@/components/KeyFiguresSection";
@@ -78,6 +79,7 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
+      <FloatingCTA />
       <Navbar />
       <HeroSection />
       <VideoShowcase />

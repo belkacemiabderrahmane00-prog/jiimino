@@ -1,0 +1,80 @@
+import { useState, useEffect } from "react";
+import { Phone, X, MessageSquare } from "lucide-react";
+
+const FloatingCTA = () => {
+  const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+      {open && (
+        <div
+          className="rounded-2xl p-5 w-64 shadow-2xl animate-fade-up"
+          style={{
+            background: 'hsl(225 8% 16%)',
+            border: '1px solid hsl(42 72% 50% / 0.2)',
+            boxShadow: '0 8px 40px hsl(0 0% 0% / 0.4), 0 0 40px hsl(42 72% 50% / 0.08)',
+          }}
+        >
+          <p className="text-[11px] font-bold uppercase tracking-wider text-primary mb-3">Nous contacter</p>
+          <a
+            href="tel:+33781914499"
+            className="flex items-center gap-3 p-3 rounded-xl mb-2 transition-all hover:scale-[1.02]"
+            style={{ background: 'hsl(42 72% 50% / 0.1)', border: '1px solid hsl(42 72% 50% / 0.2)' }}
+          >
+            <Phone className="w-4 h-4 text-primary shrink-0" />
+            <div>
+              <p className="text-[12px] font-semibold text-foreground/90">07 81 91 44 99</p>
+              <p className="text-[10px] text-foreground/50">Hotline 24h/24</p>
+            </div>
+          </a>
+          <a
+            href="tel:+33651175180"
+            className="flex items-center gap-3 p-3 rounded-xl mb-3 transition-all hover:scale-[1.02]"
+            style={{ background: 'hsl(42 72% 50% / 0.07)', border: '1px solid hsl(42 72% 50% / 0.15)' }}
+          >
+            <Phone className="w-4 h-4 text-primary/70 shrink-0" />
+            <div>
+              <p className="text-[12px] font-semibold text-foreground/90">06 51 17 51 80</p>
+              <p className="text-[10px] text-foreground/50">Ligne directe</p>
+            </div>
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="w-full btn-premium py-2.5 text-[11px] justify-center"
+          >
+            <MessageSquare className="w-3.5 h-3.5" />
+            Demander un devis
+          </a>
+        </div>
+      )}
+
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95"
+        style={{
+          background: 'linear-gradient(135deg, hsl(42 75% 46%), hsl(43 85% 60%))',
+          boxShadow: '0 4px 24px hsl(42 72% 50% / 0.45), 0 0 0 0 hsl(42 72% 50% / 0.3)',
+          animation: open ? 'none' : 'pulseGold 3s ease-in-out infinite',
+        }}
+        aria-label="Nous contacter"
+      >
+        {open
+          ? <X className="w-5 h-5 text-primary-foreground" />
+          : <Phone className="w-5 h-5 text-primary-foreground" />
+        }
+      </button>
+    </div>
+  );
+};
+
+export default FloatingCTA;
