@@ -22,7 +22,6 @@ import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
 import CookieBanner from "@/components/CookieBanner";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
-import SocialProofBadge from "@/components/SocialProofBadge";
 import BlogSection from "@/components/BlogSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import { Helmet } from "react-helmet-async";
@@ -70,8 +69,7 @@ const Index = () => {
       <CustomCursor />
       <CookieBanner />
       <ExitIntentPopup />
-      <SocialProofBadge />
-      <Helmet>
+<Helmet>
         <title>JII MINO – Sécurité Privée d'Excellence à Paris | Gardiennage & Surveillance</title>
         <meta name="description" content="JII MINO, entreprise française de sécurité privée à Paris. Surveillance humaine, gardiennage, sécurité événementielle, prévention incendie, contrôle d'accès. Agréée CNAPS. Devis gratuit 24h/24." />
         <meta name="keywords" content="sécurité privée Paris, entreprise sécurité, gardiennage, surveillance humaine, sécurité événementielle, CNAPS, agent de sécurité Paris, vigile Paris, protection des biens" />
