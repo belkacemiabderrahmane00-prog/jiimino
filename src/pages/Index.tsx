@@ -22,7 +22,6 @@ import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
 import CookieBanner from "@/components/CookieBanner";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
-import BlogSection from "@/components/BlogSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import { Helmet } from "react-helmet-async";
 
@@ -147,10 +146,6 @@ const Index = () => {
 
       <RevealSection>
         <CertificationsSection />
-      </RevealSection>
-
-      <RevealSection>
-        <BlogSection />
       </RevealSection>
 
       <RevealSection>
