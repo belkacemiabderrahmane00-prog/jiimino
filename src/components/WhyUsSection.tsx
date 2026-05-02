@@ -14,7 +14,7 @@ const reasons = [
 const WhyUsSection = () => (
   <section
     id="pourquoi"
-    className="relative py-28 md:py-36 overflow-hidden gold-grain gold-spotlight"
+    className="relative py-16 md:py-28 lg:py-36 overflow-hidden gold-grain gold-spotlight"
     style={{
       background: 'linear-gradient(180deg, hsl(228 7% 17%) 0%, hsl(228 7% 19%) 40%, hsl(38 8% 18%) 100%)',
     }}
@@ -55,7 +55,7 @@ const WhyUsSection = () => (
         {reasons.slice(2).map((r, i) => (
           <div
             key={i}
-            className="group text-center p-6 rounded-xl card-premium card-premium-hover"
+            className="group text-center p-4 sm:p-6 rounded-xl card-premium card-premium-hover"
           >
             <div className="w-12 h-12 mx-auto rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500" style={{ background: 'linear-gradient(135deg, hsl(42 72% 50% / 0.12), hsl(42 72% 50% / 0.05))', border: '1px solid hsl(42 72% 50% / 0.18)', boxShadow: '0 2px 14px hsl(42 72% 50% / 0.08)' }}>
               <r.icon className="w-5 h-5 text-primary" />

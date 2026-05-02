@@ -39,7 +39,7 @@ function CounterCard({ icon: Icon, value, suffix, label, duration, started, inde
 
   return (
     <div
-      className={`group relative text-center p-8 transition-all duration-700 ${started ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`group relative text-center p-3 sm:p-6 md:p-8 transition-all duration-700 ${started ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       {/* Glow effect on hover */}
@@ -49,7 +49,7 @@ function CounterCard({ icon: Icon, value, suffix, label, duration, started, inde
       />
 
       <div className="relative z-10">
-        <div className="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500"
+        <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500"
           style={{
             background: 'linear-gradient(135deg, hsl(42 72% 50% / 0.12), hsl(42 72% 50% / 0.05))',
             border: '1px solid hsl(42 72% 50% / 0.2)',
@@ -59,7 +59,7 @@ function CounterCard({ icon: Icon, value, suffix, label, duration, started, inde
           <Icon className="w-7 h-7 text-primary transition-transform duration-500 group-hover:scale-110" />
         </div>
 
-        <p className="text-5xl md:text-6xl font-serif font-bold text-primary mb-2 tabular-nums"
+        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary mb-2 tabular-nums"
           style={{ textShadow: started ? '0 0 30px hsl(42 72% 50% / 0.3)' : 'none', transition: 'text-shadow 1s ease' }}
         >
           {count}{suffix}
@@ -102,7 +102,7 @@ const KeyFiguresSection = () => {
           <p className="text-xs font-semibold tracking-[0.2em] uppercase mb-4 inline-block text-primary">
             En chiffres
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] text-primary-foreground">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-[1.05] text-primary-foreground">
             Une équipe dirigeante de <span className="text-primary">plus de 20 ans d'expérience</span>
           </h2>
         </div>

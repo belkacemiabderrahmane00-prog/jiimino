@@ -45,7 +45,7 @@ const others = [
 const ServicesSection = () => (
   <section
     id="prestations"
-    className="relative py-28 md:py-36 gold-grain gold-spotlight"
+    className="relative py-16 md:py-28 lg:py-36 gold-grain gold-spotlight"
     style={{
       background: 'linear-gradient(180deg, hsl(228 7% 17%) 0%, hsl(228 6% 19%) 30%, hsl(230 8% 18%) 60%, hsl(42 8% 16%) 100%)',
     }}

@@ -30,7 +30,7 @@ const VideoShowcase = () => {
       />
 
       {/* Vidéo */}
-      <div className="relative" style={{ height: 'clamp(380px, 58vw, 720px)' }}>
+      <div className="relative" style={{ height: 'clamp(260px, 65vw, 720px)' }}>
         <img
           src={heroImg}
           alt=""

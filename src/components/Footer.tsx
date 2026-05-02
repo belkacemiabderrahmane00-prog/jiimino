@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="metallic-line" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-14 pb-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-10 lg:gap-8 mb-12">
           <div className="lg:col-span-4">
             <BrandLogo variant="light" className="h-9 mb-4" />
             <p className="text-primary/70 font-serif italic text-[14px] mb-3">

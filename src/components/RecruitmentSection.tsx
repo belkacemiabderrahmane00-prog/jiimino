@@ -45,11 +45,11 @@ const RecruitmentSection = () => {
     "w-full px-4 py-3 rounded-md text-[13px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/30 bg-white/60 border border-primary/15 text-[hsl(225,15%,12%)] placeholder:text-[hsl(225,10%,50%)]";
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden section-cream-warm">
+    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden section-cream-warm">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image */}
           <div className="relative order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">

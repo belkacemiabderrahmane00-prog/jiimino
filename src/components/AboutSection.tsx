@@ -3,10 +3,10 @@ import photoAbout from "@/assets/photo-about.jpg";
 const AboutSection = () => (
   <section
     id="apropos"
-    className="relative py-28 md:py-36 overflow-hidden section-cream-warm"
+    className="relative py-16 md:py-28 lg:py-36 overflow-hidden section-cream-warm"
   >
     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
         <div className="relative">
           <div className="rounded-2xl overflow-hidden" style={{ boxShadow: '0 8px 40px hsl(225 15% 12% / 0.15), 0 0 60px hsl(42 72% 50% / 0.08)' }}>
             <img
@@ -16,11 +16,11 @@ const AboutSection = () => (
               className="w-full h-[380px] lg:h-[460px] object-cover"
             />
           </div>
-          <div className="absolute -bottom-4 -right-4 rounded-xl p-5 bg-white border border-primary/20" style={{ boxShadow: '0 8px 32px hsl(225 15% 12% / 0.12)' }}>
+          <div className="hidden sm:block absolute -bottom-4 -right-4 rounded-xl p-5 bg-white border border-primary/20" style={{ boxShadow: '0 8px 32px hsl(225 15% 12% / 0.12)' }}>
             <p className="text-3xl font-serif font-semibold text-primary">24/7</p>
             <p className="text-[10px] uppercase tracking-wider" style={{ color: 'hsl(225 10% 45%)' }}>Disponibilité</p>
           </div>
-          <div className="absolute -top-3 -left-3 rounded-xl p-4 bg-white border border-primary/20" style={{ boxShadow: '0 8px 32px hsl(225 15% 12% / 0.12)' }}>
+          <div className="hidden sm:block absolute -top-3 -left-3 rounded-xl p-4 bg-white border border-primary/20" style={{ boxShadow: '0 8px 32px hsl(225 15% 12% / 0.12)' }}>
             <p className="text-[11px] uppercase tracking-wider" style={{ color: 'hsl(225 10% 45%)' }}>Siège social</p>
             <p className="text-sm font-semibold" style={{ color: 'hsl(225 15% 12%)' }}>Paris 17e</p>
           </div>

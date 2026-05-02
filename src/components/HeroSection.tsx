@@ -21,7 +21,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 min-h-screen flex items-center">
-        <div className="max-w-2xl py-32 lg:py-0">
+        <div className="max-w-2xl pt-28 pb-16 lg:py-0">
           <div className="animate-fade-up mb-8 flex items-center gap-3">
             <div className="h-px w-8" style={{ background: 'linear-gradient(90deg, transparent, hsl(42 72% 52% / 0.8))' }} />
             <p className="text-[10px] tracking-[0.3em] uppercase font-bold" style={{ color: 'hsl(42 72% 55%)' }}>

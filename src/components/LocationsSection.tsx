@@ -92,7 +92,7 @@ const LocationsSection = () => (
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.5!2d2.2937!3d48.8789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc718507497%3A0x5765cb7e8c5765e3!2s58%20Av.%20de%20Wagram%2C%2075017%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000"
           width="100%"
-          height="420"
+          className="h-[260px] sm:h-[340px] md:h-[420px]"
           style={{
             border: 0,
             filter: 'invert(0.9) hue-rotate(180deg) brightness(1.15) contrast(0.85) saturate(0.3)',
@@ -103,7 +103,7 @@ const LocationsSection = () => (
           title="JII MINO — 58 avenue de Wagram, Paris"
         />
 
-        <div className="absolute bottom-4 left-4 right-4 flex justify-center gap-4 z-10">
+        <div className="absolute bottom-4 left-4 right-4 flex justify-center gap-2 sm:gap-4 z-10">
           {locations.map((loc) => (
             <div key={loc.city} className="glass px-4 py-2 rounded-full flex items-center gap-2 text-[12px]">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse-gold" />
