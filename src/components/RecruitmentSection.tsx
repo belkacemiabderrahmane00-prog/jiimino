@@ -22,12 +22,9 @@ const RecruitmentSection = () => {
     setSending(true);
 
     const formData = new FormData(e.currentTarget);
-    formData.append("_captcha", "false");
-    formData.append("_subject", "Nouvelle candidature – JII MINO");
-    formData.append("_template", "table");
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/contact@jiimino.com", {
+      const res = await fetch("/api/recruitment", {
         method: "POST",
         body: formData,
       });
@@ -153,8 +150,7 @@ const RecruitmentSection = () => {
                 <div className="w-10 h-px bg-primary/50 mb-6" />
 
                 <form onSubmit={handleSubmit} encType="multipart/form-data" className="space-y-4">
-                  <input type="hidden" name="_captcha" value="false" />
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="text-[10px] uppercase tracking-wider font-medium mb-1.5 block" style={{ color: 'hsl(38 15% 55%)' }}>Nom complet *</label>

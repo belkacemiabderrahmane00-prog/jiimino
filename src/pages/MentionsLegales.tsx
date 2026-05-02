@@ -45,17 +45,7 @@ const MentionsLegales = () => (
         </section>
 
         <section>
-          <h2 className="text-foreground font-semibold text-lg mb-3">4. Hébergement</h2>
-          <p>
-            Ce site est hébergé par :<br />
-            <strong className="text-foreground/70">Vercel Inc.</strong><br />
-            440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br />
-            Site : <a href="https://vercel.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-foreground font-semibold text-lg mb-3">5. Propriété intellectuelle</h2>
+          <h2 className="text-foreground font-semibold text-lg mb-3">4. Propriété intellectuelle</h2>
           <p>
             L'ensemble des contenus présents sur ce site (textes, images, logos, graphismes, icônes)
             est protégé par le droit de la propriété intellectuelle. Toute reproduction, même partielle,
@@ -64,7 +54,7 @@ const MentionsLegales = () => (
         </section>
 
         <section>
-          <h2 className="text-foreground font-semibold text-lg mb-3">6. Responsabilité</h2>
+          <h2 className="text-foreground font-semibold text-lg mb-3">5. Responsabilité</h2>
           <p>
             JII MINO SAS s'efforce de fournir des informations exactes et à jour.
             Toutefois, la société ne saurait garantir l'exactitude, la complétude ou l'actualité
@@ -74,7 +64,7 @@ const MentionsLegales = () => (
         </section>
 
         <section>
-          <h2 className="text-foreground font-semibold text-lg mb-3">7. Liens hypertextes</h2>
+          <h2 className="text-foreground font-semibold text-lg mb-3">6. Liens hypertextes</h2>
           <p>
             Le site peut contenir des liens vers d'autres sites. JII MINO SAS
             n'exerce aucun contrôle sur le contenu de ces sites tiers et décline toute responsabilité
@@ -83,7 +73,7 @@ const MentionsLegales = () => (
         </section>
 
         <section>
-          <h2 className="text-foreground font-semibold text-lg mb-3">8. Droit applicable</h2>
+          <h2 className="text-foreground font-semibold text-lg mb-3">7. Droit applicable</h2>
           <p>
             Les présentes mentions légales sont soumises au droit français. Tout litige relatif
             à l'utilisation du site sera de la compétence exclusive des tribunaux de Paris.
