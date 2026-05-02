@@ -63,6 +63,12 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
+  @media (pointer: fine) {
+    body, a, button, [role="button"] {
+      cursor: none !important;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
   }

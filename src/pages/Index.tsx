@@ -18,6 +18,13 @@ import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import RevealSection from "@/components/RevealSection";
 import SectionDivider from "@/components/SectionDivider";
+import ScrollProgress from "@/components/ScrollProgress";
+import CustomCursor from "@/components/CustomCursor";
+import CookieBanner from "@/components/CookieBanner";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import SocialProofBadge from "@/components/SocialProofBadge";
+import BlogSection from "@/components/BlogSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import { Helmet } from "react-helmet-async";
 
 const jsonLd = {
@@ -59,6 +66,11 @@ const jsonLd = {
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ScrollProgress />
+      <CustomCursor />
+      <CookieBanner />
+      <ExitIntentPopup />
+      <SocialProofBadge />
       <Helmet>
         <title>JII MINO – Sécurité Privée d'Excellence à Paris | Gardiennage & Surveillance</title>
         <meta name="description" content="JII MINO, entreprise française de sécurité privée à Paris. Surveillance humaine, gardiennage, sécurité événementielle, prévention incendie, contrôle d'accès. Agréée CNAPS. Devis gratuit 24h/24." />
@@ -133,6 +145,14 @@ const Index = () => {
 
       <RevealSection>
         <LocationsSection />
+      </RevealSection>
+
+      <RevealSection>
+        <CertificationsSection />
+      </RevealSection>
+
+      <RevealSection>
+        <BlogSection />
       </RevealSection>
 
       <RevealSection>
