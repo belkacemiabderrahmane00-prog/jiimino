@@ -119,9 +119,9 @@ const TestimonialsSection = () => (
       </div>
 
       {/* Marquee rows */}
-      <div className="overflow-hidden marquee-track mb-4" style={{ maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
+      <div className="overflow-hidden marquee-track mb-4 w-full" style={{ maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
         {/* Row 1 — défile vers la gauche */}
-        <div className="flex gap-4 w-max marquee-left">
+        <div className="flex gap-4 w-max marquee-left" style={{ willChange: 'transform' }}>
           {[...row1, ...row1].map((client, i) => (
             <div
               key={i}
@@ -143,9 +143,9 @@ const TestimonialsSection = () => (
         </div>
       </div>
 
-      <div className="overflow-hidden marquee-track mb-10" style={{ maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
+      <div className="overflow-hidden marquee-track mb-10 w-full" style={{ maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
         {/* Row 2 — défile vers la droite */}
-        <div className="flex gap-4 w-max marquee-right">
+        <div className="flex gap-4 w-max marquee-right" style={{ willChange: 'transform' }}>
           {[...row2, ...row2].map((client, i) => (
             <div
               key={i}

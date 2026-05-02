@@ -17,7 +17,7 @@ const sectors = [
 const ClientsSection = () => (
   <section
     id="clients"
-    className="relative py-28 md:py-36 overflow-hidden gold-grain gold-spotlight"
+    className="relative py-16 md:py-28 lg:py-36 overflow-hidden gold-grain gold-spotlight"
     style={{
       background: 'linear-gradient(135deg, hsl(228 7% 17%) 0%, hsl(228 7% 19%) 50%, hsl(42 8% 18%) 100%)',
     }}
@@ -26,7 +26,7 @@ const ClientsSection = () => (
 
     <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-start">
         <div>
           <p className="section-label">Nos secteurs</p>
           <h2 className="section-title">
@@ -57,7 +57,7 @@ const ClientsSection = () => (
           </a>
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
           {sectors.map((s, i) => (
             <div
               key={i}
