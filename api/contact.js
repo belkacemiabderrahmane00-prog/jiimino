@@ -1,5 +1,6 @@
+import nodemailer from 'nodemailer';
+
 export default async function handler(req, res) {
-  // CORS
   res.setHeader('Access-Control-Allow-Origin', 'https://jiimino.com');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -11,10 +12,8 @@ export default async function handler(req, res) {
 
   const { nom, societe, telephone, email, besoin, message, website } = req.body || {};
 
-  // Anti-spam honeypot
   if (website) return res.status(200).json({ success: true });
 
-  // Validation
   if (!nom?.trim() || !telephone?.trim() || !email?.trim()) {
     return res.status(400).json({ success: false, message: 'Champs requis manquants' });
   }
@@ -22,10 +21,19 @@ export default async function handler(req, res) {
     return res.status(400).json({ success: false, message: 'E-mail invalide' });
   }
 
-  const RESEND_API_KEY = process.env.RESEND_API_KEY;
-  if (!RESEND_API_KEY) {
+  const SMTP_USER = process.env.SMTP_USER;
+  const SMTP_PASS = process.env.SMTP_PASS;
+
+  if (!SMTP_USER || !SMTP_PASS) {
     return res.status(500).json({ success: false, message: 'Configuration email manquante' });
   }
+
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.hostinger.com',
+    port: 587,
+    secure: false,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  });
 
   const emailBody = `
 Nouvelle demande de devis — jiimino.com
@@ -46,30 +54,17 @@ Envoyé depuis jiimino.com
   `.trim();
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'JII MINO <onboarding@resend.dev>',
-        to: ['contact@jiimino.com'],
-        reply_to: email,
-        subject: `Demande de devis – ${nom}`,
-        text: emailBody,
-      }),
+    await transporter.sendMail({
+      from: `"JII MINO Site" <${SMTP_USER}>`,
+      to: 'contact@jiimino.com',
+      replyTo: email,
+      subject: `Demande de devis – ${nom}`,
+      text: emailBody,
     });
 
-    if (response.ok) {
-      return res.status(200).json({ success: true, message: 'Email envoyé avec succès' });
-    } else {
-      const err = await response.json().catch(() => ({}));
-      console.error('Resend error:', err);
-      return res.status(500).json({ success: false, message: 'Erreur lors de l\'envoi' });
-    }
+    return res.status(200).json({ success: true, message: 'Email envoyé avec succès' });
   } catch (error) {
-    console.error('Contact API error:', error);
-    return res.status(500).json({ success: false, message: 'Erreur serveur' });
+    console.error('SMTP error:', error);
+    return res.status(500).json({ success: false, message: 'Erreur lors de l\'envoi' });
   }
 }

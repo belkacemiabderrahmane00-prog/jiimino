@@ -50,11 +50,30 @@ const VideoShowcase = () => {
           style={{ filter: 'brightness(0.52) contrast(1.06) saturate(0.88)' }}
         />
 
-        {/* Overlay subtil — lumière dorée au centre */}
+        {/* Overlay subtil */}
         <div
           className="absolute inset-0"
-          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, hsl(42 72% 50% / 0.04), transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, hsl(42 72% 50% / 0.05), transparent 70%)' }}
         />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(105deg, hsl(225 15% 8% / 0.45) 0%, transparent 50%, hsl(225 15% 8% / 0.2) 100%)' }}
+        />
+
+        {/* Texte centré sur la vidéo */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6">
+          <p className="text-[10px] font-bold tracking-[0.35em] uppercase mb-5" style={{ color: 'hsl(42 72% 58%)' }}>
+            Notre engagement
+          </p>
+          <h2 className="font-serif font-semibold leading-[1.05] mb-5" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', textShadow: '0 2px 40px hsl(0 0% 0% / 0.5)' }}>
+            La sécurité<br />
+            <span className="gold-shimmer">au service de l'excellence</span>
+          </h2>
+          <p className="text-[14px] md:text-[16px] leading-relaxed max-w-lg" style={{ color: 'hsl(38 15% 72%)', textShadow: '0 1px 16px hsl(0 0% 0% / 0.6)' }}>
+            Des agents formés, des dispositifs sur mesure,<br className="hidden md:block" />
+            une présence qui protège et rassure.
+          </p>
+        </div>
 
         {/* Fondu bas — raccord avec la section services */}
         <div
