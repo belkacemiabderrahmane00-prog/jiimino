@@ -1,23 +1,55 @@
 import { ArrowRight, Phone } from "lucide-react";
+import { useEffect, useRef } from "react";
 import heroImg from "@/assets/hero-security.jpg";
 import BrandLogo from "@/components/BrandLogo";
 import badgeCnaps from "@/assets/badge-cnaps.png";
 import badgeRcpro from "@/assets/badge-rcpro.png";
 
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="accueil" className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0">
+        {/* Poster image — visible immédiatement pendant le chargement de la vidéo */}
         <img
           src={heroImg}
-          alt="Agent de sécurité JII MINO"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover object-center"
-          style={{ filter: 'brightness(0.75) contrast(1.05)' }}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ filter: 'brightness(0.65) contrast(1.05)' }}
         />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(105deg, hsl(225 15% 8% / 0.97) 0%, hsl(225 12% 10% / 0.82) 45%, hsl(225 10% 8% / 0.35) 100%)' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(0deg, hsl(225 15% 8%) 0%, transparent 35%, transparent 70%, hsl(225 15% 8% / 0.6) 100%)' }} />
+        {/* Vidéo en streaming progressif — ne bloque aucune ressource */}
+        <video
+          ref={videoRef}
+          src="/hero-video.mp4"
+          poster={heroImg}
+          preload="metadata"
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ filter: 'brightness(0.55) contrast(1.08) saturate(0.9)' }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(105deg, hsl(225 15% 8% / 0.88) 0%, hsl(225 12% 10% / 0.65) 45%, hsl(225 10% 8% / 0.2) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(0deg, hsl(225 15% 8%) 0%, transparent 35%, transparent 75%, hsl(225 15% 8% / 0.5) 100%)' }} />
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 60% 80% at 20% 50%, hsl(42 72% 50% / 0.04) 0%, transparent 70%)' }} />
       </div>
 
