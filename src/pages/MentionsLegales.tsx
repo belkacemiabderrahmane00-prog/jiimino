@@ -48,8 +48,9 @@ const MentionsLegales = () => (
           <h2 className="text-foreground font-semibold text-lg mb-3">4. Hébergement</h2>
           <p>
             Ce site est hébergé par :<br />
-            Lovable / Netlify — San Francisco, CA, États-Unis<br />
-            Site : <a href="https://lovable.dev" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">lovable.dev</a>
+            <strong className="text-foreground/70">Vercel Inc.</strong><br />
+            440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br />
+            Site : <a href="https://vercel.com" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">vercel.com</a>
           </p>
         </section>
 

@@ -14,6 +14,7 @@ import AboutSection from "@/components/AboutSection";
 import RecruitmentSection from "@/components/RecruitmentSection";
 import LocationsSection from "@/components/LocationsSection";
 import ContactSection from "@/components/ContactSection";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import RevealSection from "@/components/RevealSection";
 import SectionDivider from "@/components/SectionDivider";
@@ -132,6 +133,10 @@ const Index = () => {
 
       <RevealSection>
         <LocationsSection />
+      </RevealSection>
+
+      <RevealSection>
+        <FaqSection />
       </RevealSection>
 
       {/* Dark → Cream warm */}

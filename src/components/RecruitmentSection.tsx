@@ -27,7 +27,7 @@ const RecruitmentSection = () => {
     formData.append("_template", "table");
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/belkacemiabderrahmane00@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/contact@jiimino.com", {
         method: "POST",
         body: formData,
       });
