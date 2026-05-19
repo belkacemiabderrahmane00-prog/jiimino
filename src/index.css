@@ -63,13 +63,7 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  @media (pointer: fine) {
-    body, a, button, [role="button"] {
-      cursor: none !important;
-    }
-  }
-
-  html {
+html {
     scroll-behavior: smooth;
     overflow-x: hidden;
   }

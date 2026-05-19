@@ -19,7 +19,6 @@ import Footer from "@/components/Footer";
 import RevealSection from "@/components/RevealSection";
 import SectionDivider from "@/components/SectionDivider";
 import ScrollProgress from "@/components/ScrollProgress";
-import CustomCursor from "@/components/CustomCursor";
 import CookieBanner from "@/components/CookieBanner";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import CertificationsSection from "@/components/CertificationsSection";
@@ -65,8 +64,7 @@ const Index = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <ScrollProgress />
-      <CustomCursor />
-      <CookieBanner />
+<CookieBanner />
       <ExitIntentPopup />
 <Helmet>
         <title>JII MINO – Sécurité Privée d'Excellence à Paris | Gardiennage & Surveillance</title>
