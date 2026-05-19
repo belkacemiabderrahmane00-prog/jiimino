@@ -58,7 +58,7 @@ const CertificationsSection = () => (
         <div className="metallic-line w-20 mx-auto mt-6" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
         {certs.map((cert, i) => (
           <div
             key={i}
