@@ -24,6 +24,9 @@ export default async function handler(req, res) {
 
   const SMTP_USER = process.env.SMTP_USER;
   const SMTP_PASS = process.env.SMTP_PASS;
+  const SMTP_HOST = process.env.SMTP_HOST || 'smtp.hostinger.com';
+  const SMTP_PORT = parseInt(process.env.SMTP_PORT || '465', 10);
+  const SMTP_TO   = process.env.SMTP_TO   || SMTP_USER;
 
   if (!SMTP_USER || !SMTP_PASS) {
     console.error('Missing SMTP_USER or SMTP_PASS environment variables');
@@ -33,15 +36,15 @@ export default async function handler(req, res) {
   let transporter;
   try {
     transporter = nodemailer.createTransport({
-      host: 'smtp.hostinger.com',
-      port: 465,
-      secure: true,
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: SMTP_PORT === 465,
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
       tls: {
-        rejectUnauthorized: true,
+        rejectUnauthorized: false,
       },
     });
   } catch (err) {
@@ -83,7 +86,7 @@ export default async function handler(req, res) {
   try {
     await transporter.sendMail({
       from: `"JII MINO Site Web" <${SMTP_USER}>`,
-      to: SMTP_USER,
+      to: SMTP_TO,
       replyTo: `"${nom}" <${email}>`,
       subject: `[Devis] ${nom}${societe ? ` — ${societe}` : ''} — ${besoin || 'Demande'}`,
       html: emailHTML,
