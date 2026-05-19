@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, ArrowRight, Shield } from "lucide-react";
+import { Menu, X, Phone, ArrowRight } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
 
 const navLinks = [
@@ -51,30 +51,6 @@ const Navbar = () => {
           : "bg-gradient-to-b from-background/70 to-transparent"
       }`}
     >
-      {/* Top micro-bar */}
-      <div
-        className={`transition-all duration-500 overflow-hidden ${
-          scrolled ? "h-0 opacity-0" : "h-9 opacity-100"
-        }`}
-      >
-        <div style={{ borderBottom: '1px solid hsl(42 72% 50% / 0.06)' }}>
-          <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-9 text-[11px]">
-            <div className="hidden sm:flex items-center gap-2 text-foreground/35">
-              <Shield className="w-3 h-3 text-primary/50" />
-              <span className="tracking-wider">Sécurité privée — Paris & Île-de-France</span>
-            </div>
-            <div className="flex items-center gap-4 text-foreground/35">
-              <a href="tel:+33955790988" className="flex items-center gap-1.5 hover:text-primary transition-colors duration-300">
-                <Phone className="w-3 h-3" />
-                <span>09 55 79 09 88</span>
-              </a>
-              <span className="hidden sm:inline text-primary/15">|</span>
-              <span className="hidden sm:inline text-primary/40 font-medium">24h/24 — 7j/7</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main nav */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-[72px]">
         <a href="#accueil" className="relative z-10 shrink-0 group">
@@ -91,15 +67,15 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`relative px-4 py-2 text-[11px] font-semibold tracking-[0.1em] uppercase transition-all duration-300 rounded-md ${
+              className={`relative px-4 py-2 text-[11px] font-semibold tracking-[0.1em] uppercase transition-all duration-300 ${
                 activeSection === link.href
-                  ? "text-primary bg-primary/[0.08]"
-                  : "text-foreground/40 hover:text-foreground/75 hover:bg-foreground/[0.04]"
+                  ? "text-primary"
+                  : "text-foreground/40 hover:text-foreground/75"
               }`}
             >
               {link.label}
               {activeSection === link.href && (
-                <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-[2px] bg-gradient-to-r from-primary/60 via-primary to-primary/60 rounded-full" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] rounded-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(42 72% 52%), transparent)' }} />
               )}
             </a>
           ))}
